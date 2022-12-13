@@ -1,0 +1,157 @@
+Container header
+Container nav
+Container main
+Container aside
+Container footer
+Container img
+
+Container empty
+Container empty2
+Container gridContainer(header, nav, main, aside, footer, empty, empty2, img)
+
+gridContainer grid(
+	header header header,
+	nav nav nav,
+	main main aside,
+	main main aside,
+	main main aside,
+	img img aside,
+	empty footer empty2 //our grid doesn't support . for empty spots, so empty containers are used in its stead
+)
+
+gridContainer style("
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0.5rem solid #550000;
+	border-radius: 20px;
+")
+
+header style("height: 100px;")
+
+Text headerInfoText "Example website"
+Container headerInfoCon(headerInfoText)
+
+header add(headerInfoCon)
+
+header style("
+	display: flex;
+	justify-content: center;
+	background: #99bb99;
+")
+
+
+
+Text footerText "
+Creators of Xtml: Kay, Valentin, Lars, Tommy <br>
+October - December 2022 <br>
+Course: TDT4250 - Advanced Softwaredesign
+"
+
+footerText style("
+	text-align: center;
+	font-family: comic sans MS;
+	font-size: 12px;
+")
+
+
+footer add(footerText)
+
+footer style("
+	margin-top: 10vh;
+	display: flex;
+	justify-content: center;
+	background: #9999bb;
+")
+
+
+Text mainText "Basic steps on how to use xtml:"
+Text mainTextp1 "1: Define a definition with name, such as 'Container con', or 'Text introParagraph'"
+Text mainTextp2 "2: Next you can specify what your element will contain:"
+Text mainTextp2x "
+	&emsp; 2.1 A text element can contain text via e.g. Text introParagraph \"Hello and welcome to my website!\" <br>
+	&emsp; 2.2 A container can contain other elements, such as the introParagraph: \"con add(introParagraph)\" <br>
+	&emsp; 2.3 Image elements can contain a link to an image: Image exampleImage. exampleImage href(\"hamster.jpg\") <br>
+"
+Text mainTextp3 "
+	All of these can be customized with CSS! Either directly via the elementName style(\"\") command, or via
+	several custom styling commands, such as grid(), flex(), font(), size() and color().
+"
+Text mainTextp4 "And if you want examples, you can look at the source for this html file!"
+
+main add(mainText, mainTextp1, mainTextp2, mainTextp2x, mainTextp3, mainTextp4)
+main style("
+	display: flex;
+	flex-direction: column;
+	margin-left: 2%;
+	background: #aa9999;
+	padding: 1rem;
+	border-radius: 1rem 1rem 0rem 0rem
+")
+
+
+Text asideTop "Things we could've added in the future"
+asideTop size("22px")
+asideTop font("consolas")
+asideTop style("text-align: center;")
+
+Text aside1 "Buttons was one thing we overlooked.
+			 While a-tags can do more or less the same, buttons are handy as a baseline."
+
+Text aside2 "Table support. This is very clunky in html due to the sheer number of tags needed to place things correctly.
+			 In an updated xtml, this would become a priority."
+
+Text aside3 "Other things we could've added include radio buttons, select-menues and sliders.
+			 These could have enhanced the flexibility of xtml by quite a bit, and allow it to mimic more of html"
+			 
+
+
+aside add(asideTop, aside1, aside2, aside3)
+
+aside style("
+	background: #bb99bb;
+	border-radius: 1rem 1rem 0rem 0rem;
+	padding: 1rem;
+	margin-right: 2%;
+")
+
+
+/*
+Image image
+image src("resources/hamster.jpg")
+image style("
+	width: 20vw;
+") 
+*/
+
+Text imageLink "Secondary page with link source"
+imageLink href("ex2.html")
+
+imageLink style("
+	color: #256245;
+	text-align: center;
+	font-size: 1rem;
+	width: 14rem;
+	background: #333333;
+	height: 1.2rem;
+	top: 6.6rem;
+	border: 5px;
+	border-color: #999999;
+	border-radius: 2rem;
+	position: relative;
+")
+
+img add(imageLink)
+
+img style ("
+	width: 98%;
+	margin-left: 2%;
+	height: 12rem;
+	background-image: url('resources/hamster.jpg');
+	background-position: center;
+	background-size: cover;
+	background-color: #cccccc;
+")
+img flex("center")
+
+

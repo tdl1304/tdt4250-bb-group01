@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="viewport" version="12.0.0.2017041100">
+  <ownedViewpoints name="XtmlDiagramViewport" modelFileExtension="xtml">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="XtmlDiagram" domainClass="xtml::Document" enablePopupBars="true">
+      <metamodel href="../../htmlDSL.xtext/model/generated/Xtml.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Text" domainClass="xtml::TextDefinition">
+          <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.type + ': ' + self.name" tooltipExpression="aql:self.type" sizeComputationExpression="12" labelPosition="node" resizeKind="NSEW" shape="dot">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Img" domainClass="xtml::ImageDefinition">
+          <style xsi:type="style:LozengeNodeDescription" labelSize="12" showIcon="false" labelExpression="aql:self.type + ': ' + self.name" tooltipExpression="feature:type" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Container" domainClass="xtml::ContainerDefinition">
+          <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.type + ': ' + self.name" tooltipExpression="feature:type" sizeComputationExpression="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Style" semanticCandidatesExpression="aql:self.eAllContents()->select(f | f.fname = 'style')" domainClass="xtml::Function">
+          <style xsi:type="style:BundledImageDescription" labelSize="9" showIcon="false" labelExpression="aql: self.fname + ': ' + self.strings" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="linkFunc" sourceMapping="//@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Container']" targetMapping="//@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Img'] //@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Text'] //@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Container']" targetFinderExpression="aql: self.func.objects" sourceFinderExpression="feature:ref" domainClass="xtml::FunctionCall" useDomainElement="true">
+          <style sourceArrow="Diamond" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql:self.func.fname">
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="linkOnInit" sourceMapping="//@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Container']" targetMapping="//@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Img'] //@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Text'] //@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Container']" targetFinderExpression="aql: self.objects" sourceFinderExpression="aql:self" domainClass="xtml::ContainerDefinition" useDomainElement="true">
+          <style sourceArrow="Diamond" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="add">
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="linkStyle" sourceMapping="//@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Style']" targetMapping="//@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Img'] //@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Text'] //@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Container']" targetFinderExpression="aql: self.ref" sourceFinderExpression="feature:func" domainClass="xtml::FunctionCall" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql:self.func.fname">
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="CreationTools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newContainer" nodeMappings="//@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Container']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="xtml::ContainerDefinition" referenceName="expressions">
+                <subModelOperations xsi:type="tool_1:ChangeContext">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'&lt;name>'"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="Container"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newText" nodeMappings="//@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Text']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="xtml::TextDefinition" referenceName="expressions">
+                <subModelOperations xsi:type="tool_1:ChangeContext">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="&lt;name>"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="Text"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newImage" nodeMappings="//@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Img']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="xtml::ImageDefinition" referenceName="expressions">
+                <subModelOperations xsi:type="tool_1:ChangeContext">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="&lt;name>"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="Image"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="LinkToContainer" edgeMappings="//@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@edgeMappings[name='linkFunc']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="objects" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ContainerView" domainClass="xtml::Document" enablePopupBars="true">
+      <metamodel href="../../htmlDSL.xtext/model/generated/Xtml.ecore#/"/>
+      <defaultLayer name="Default">
+        <containerMappings name="Container" semanticElements="aql:self.eContents().objects" domainClass="xtml::ContainerDefinition" childrenPresentation="List">
+          <subNodeMappings name="ContainerObjects" semanticCandidatesExpression="aql:self.objects" domainClass="xtml::Definition">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:self.type + ': ' + self.name" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:self.type + ': ' + self.name" widthComputationExpression="12" heightComputationExpression="12">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="CreationTools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newContainer" nodeMappings="//@ownedViewpoints[name='XtmlDiagramViewport']/@ownedRepresentations[name='XtmlDiagram']/@defaultLayer/@nodeMappings[name='Container']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="xtml::ContainerDefinition" referenceName="expressions">
+                <subModelOperations xsi:type="tool_1:ChangeContext">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'&lt;name>'"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="Container"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:TreeDescription" name="DocumentTree" domainClass="xtml::Document">
+      <subItemMappings name="Expression" domainClass="xtml::Expression" semanticCandidatesExpression="aql:self.eAllContents()">
+        <defaultStyle labelExpression="aql:self.ref.name + self.type + ': ' + self.name  + self.func.fname">
+          <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+        </defaultStyle>
+      </subItemMappings>
+      <createTreeItem name="new text">
+        <firstModelOperation xsi:type="tool_1:CreateInstance" typeName="xtml::TextDefinition" referenceName="expressions">
+          <subModelOperations xsi:type="tool_1:ChangeContext">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="&lt;name>"/>
+          </subModelOperations>
+          <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="Text"/>
+        </firstModelOperation>
+        <variables name="root" documentation="The semantic element of the tree."/>
+        <variables name="element" documentation="The currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+      </createTreeItem>
+      <createTreeItem name="new img">
+        <firstModelOperation xsi:type="tool_1:CreateInstance" typeName="xtml::ImageDefinition" referenceName="expressions">
+          <subModelOperations xsi:type="tool_1:ChangeContext">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="&lt;name>"/>
+          </subModelOperations>
+          <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="Image"/>
+        </firstModelOperation>
+        <variables name="root" documentation="The semantic element of the tree."/>
+        <variables name="element" documentation="The currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+      </createTreeItem>
+      <createTreeItem name="new container">
+        <firstModelOperation xsi:type="tool_1:CreateInstance" typeName="xtml::ContainerDefinition" referenceName="expressions">
+          <subModelOperations xsi:type="tool_1:ChangeContext">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'&lt;name>'"/>
+          </subModelOperations>
+          <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="Container"/>
+        </firstModelOperation>
+        <variables name="root" documentation="The semantic element of the tree."/>
+        <variables name="element" documentation="The currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+      </createTreeItem>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="htmlDSL.viewport.Services"/>
+  </ownedViewpoints>
+</description:Group>

@@ -1,0 +1,68 @@
+grammar htmlDSL.Xtml with org.eclipse.xtext.common.Terminals
+
+generate xtml "http://www.Xtml.htmlDSL"
+
+Document returns Document: //top level model
+	expressions+=Expression*;
+
+// type should be an enum
+Expression:
+	Definition | FunctionCall;
+
+Definition:
+	ContainerDefinition | TextDefinition | ImageDefinition;
+
+/*---------------------Generic function call-------- */
+FunctionCall:
+	ref=[Definition] func=Function;
+
+// objects, strings, ints
+Function:
+	// Functions for All see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+	fname='style' '(' strings+=STRING ')' | // Integrate CSS validation??
+	fname='classes' '(' strings+=STRING (',' strings+=STRING)*')' |
+	fname='title' '(' strings+=STRING ')' |
+	
+	// Functions for Container
+	fname='add' '(' objects+=[Definition] (',' objects+=[Definition])*')' |
+	fname='grid' '(' rows+=GridRow* ')' |
+	fname='type' '(' strings+=STRING ')' |
+	
+	// justify-content, align-items
+	fname='flex' '(' (strings+=STRING (',' strings+=STRING)?)? ')' |
+	
+	// Functions for Text
+	fname='href' '(' strings+=STRING ')' |
+	fname='font' '(' strings+=STRING ')' |
+	fname='size' '(' strings+=STRING ')' |
+	fname='text' '(' strings+=STRING ')' |
+	fname='color' '(' strings+=STRING ')' |
+	
+	// Functions for Image
+	fname='src' '(' strings+=STRING ')' |
+	fname='alt' '(' strings+=STRING ')';
+
+/*-----------------------Container------------------ */
+ContainerDefinition:
+	type='Container' name=ID ('(' objects+=[Definition] (',' objects+=[Definition])*')')?;
+
+/*-----------------------Text---------------------- */
+TextDefinition:
+	type='Text' name=ID text=STRING?;
+
+/*-----------------------Image---------------------- */
+ImageDefinition:
+	type='Image' name=ID (src=STRING alt=STRING?)?;
+
+/*-----------------------Styling-------------------- */
+
+GridRow:
+	elements+=[Definition] (elements+=[Definition])* ','?;
+	
+/*-------------------------------------------------- */
+/*Param:
+ * 	{DefinitionRef} value=[Definition] |
+ * 	{IntConstant} value=INT |
+ * 	{StringConstant} value=STRING
+ * ;
+ */

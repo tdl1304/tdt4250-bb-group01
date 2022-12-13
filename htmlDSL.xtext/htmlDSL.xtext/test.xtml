@@ -1,0 +1,23 @@
+Container d
+Container c
+Text t "my text"
+
+c add(t)
+
+c grid(
+	c d t
+)
+
+Image img1 "http://dejvfzbhk.hgd"
+Image img2 "http://cfgbjkn.vd" "An alternative text"
+
+c add(img1, img2)
+
+img1 alt('test')
+img1 style('
+border-radius: 5px;
+')
+img1 src('/evuhjb.png')
+
+t color ('blue')
+

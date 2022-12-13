@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: htmlDSL.xtext.tests
+Bundle-ManifestVersion: 2
+Bundle-Name: htmlDSL.xtext.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: htmlDSL.xtext.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: htmlDSL.xtext,
+ org.junit.jupiter.api;bundle-version="[5.1.0,6.0.0)",
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: htmlDSL.tests;x-internal=true

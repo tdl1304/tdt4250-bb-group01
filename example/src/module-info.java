@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author kaysi
+ *
+ */
+module example {
+}

@@ -1,0 +1,30 @@
+Text source "The source for the image (i am a link!)"
+source href("https://www.dyreklinikk.no/media/global/dyreklinikk_no/mattilsynet/hamster/7/unsplash_hamster_photo-1452721226468-f95fb66ebf83_16x9.jpg?cdv=636420270530000000&width=950")
+source style("
+	text-align: center;
+	margin-bottom: 1vh;
+")
+
+Image img
+img src("resources/hamster.jpg")
+
+
+Text wayback "Click here to go back"
+wayback href("ex.html")
+
+wayback style("
+	font-family: comic sans ms;
+	font-size: 15px;
+	text-align: center;
+")
+
+Container wholePage
+wholePage add(source, img, wayback)
+
+wholePage style("
+	width: 90vw;
+	height: 90vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+")

@@ -19,8 +19,6 @@ Members:
     * [XTML grammar introduciton](#xtml-grammar-introduction)
     * [Using Sirius](#using-sirius)
 
-Open README.md for TOC links to work properly. GitLab preview is a bit bugged.
-
 # What is htmlDSL?
 ## Xtext
 For our project in TDT4250, we decided to create a DSL that would help create a HTML page more easily. We decided to use Xtext, and create a grammar that specified how the DSL could be used. The grammar consists mainly of two concepts: the container and the contents within (text, images). After creating an instance in the simplified HTML, it can then be transformed into a working HTML file.
